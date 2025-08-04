@@ -2,62 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Name | GitHub Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
       margin: 0;
       padding: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
     }
+
     header {
-      background-color: #24292e;
+      background-color: rgba(36, 41, 46, 0.85);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
     }
+
     section {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
     }
+
     h2 {
       border-bottom: 2px solid #24292e;
       padding-bottom: 0.5rem;
     }
-    .skills, .projects {
+
+    .skills, .projects, .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .skill, .project {
+
+    .skill, .project, .photo {
       background: white;
       padding: 1rem;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       flex: 1 1 250px;
     }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
     footer {
       text-align: center;
       padding: 1.5rem;
-      background-color: #24292e;
+      background-color: rgba(36, 41, 46, 0.85);
       color: white;
       margin-top: 3rem;
     }
+
     a {
       color: #0366d6;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -67,15 +86,14 @@
 
   <header>
     <h1>Your Name</h1>
-    <p>Full Stack Developer | Open Source Enthusiast | Tech Blogger</p>
+    <p>Full Stack Developer | Open Source Enthusiast | Bird Photographer</p>
     <p><a href="https://github.com/yourusername" target="_blank" style="color: #58a6ff;">github.com/yourusername</a></p>
   </header>
 
   <section>
     <h2>About Me</h2>
     <p>
-      I’m a software developer with a passion for open source, building scalable applications, and learning new technologies. 
-      I focus on clean, maintainable code and continuous learning.
+      I’m a software developer with a passion for open source, building scalable applications, and photographing birds in nature.
     </p>
   </section>
 
@@ -86,8 +104,6 @@
       <div class="skill">Python</div>
       <div class="skill">React / Next.js</div>
       <div class="skill">Node.js / Express</div>
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">Docker</div>
     </div>
   </section>
 
@@ -95,14 +111,22 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="project">
-        <h3><a href="https://github.com/yourusername/project1" target="_blank">Project One</a></h3>
-        <p>A web app for managing tasks built with React and Firebase.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://github.com/yourusername/project2" target="_blank">Project Two</a></h3>
-        <p>CLI tool written in Python to automate file organization.</p>
+        <h3><a href="https://github.com/yourusername/project1" target="_blank">Bird Watch Logger</a></h3>
+        <p>A web app for tracking bird sightings, built with React and Firebase.</p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2>Bird Photo Gallery</h2>
+    <div class="gallery">
+      <div class="photo"><img src="bird1.jpg" alt="Bird 1"></div>
+      <div class="photo"><img src="bird2.jpg" alt="Bird 2"></div>
+      <div class="photo"><img src="bird3.jpg" alt="Bird 3"></div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">
+      *All photos taken by me during hikes and nature trips.
+    </p>
   </section>
 
   <section>
@@ -112,7 +136,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Your Name. Built with 💻 and ☕.
+    &copy; 2025 Your Name. Built with 💻 and 📸.
   </footer>
 
 </body>
