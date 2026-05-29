@@ -157,6 +157,12 @@ section {
   margin-bottom: 18px;
 }
 
+.project-container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
 /* =========================
    Bird Gallery
 ========================= */
