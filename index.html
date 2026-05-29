@@ -1,48 +1,385 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | GitHub Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <title>Leslie I | Geoscience Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #7cc7ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 18px 10%;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero */
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+        url("images/geology-banner.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #c9d1d9;
+      margin-bottom: 30px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid #7cc7ff;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      background: #7cc7ff;
+      color: #0d1117;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 110px 10%;
+    }
+
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #ffffff;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+
+    .project-content p {
+      color: #b8c1cc;
+      margin-bottom: 18px;
+    }
+
+    /* Bird Gallery */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+
+    /* About */
+
+    .about-box {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      padding: 40px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 40px 10%;
+      border-top: 1px solid #1f2937;
+      text-align: center;
+      color: #8b949e;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+
+      nav ul {
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 90px 7%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Your Name</h1>
-    <p>Developer | Photographer | Open Source Enthusiast</p>
-    <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#photography">Bird Photography</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+
+    <div class="hero-content">
+      <h1>Geoscience & Exploration</h1>
+
+      <p>
+        Geospatial analysis, mineral prospectivity modeling,
+        remote sensing, machine learning, and field photography.
+      </p>
+
+      <a class="hero-btn" href="#projects">
+        View Projects
+      </a>
+    </div>
+
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a developer who enjoys coding and bird photography in my spare time.</p>
-  </section>
+  <!-- Projects -->
+  <section id="projects">
 
-  <section>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3><a href="https://github.com/yourusername/project1">Bird Watch Logger</a></h3>
-        <p>Track bird sightings with this React + Firebase app.</p>
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="images/projects/gold-map.jpg" alt="Gold Prospectivity">
+
+        <div class="project-content">
+          <h3>Gold Prospectivity Modeling</h3>
+
+          <p>
+            Machine learning model predicting prospective
+            mineral zones across California using geologic
+            and geospatial datasets.
+          </p>
+
+          <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY">
+            View Project →
+          </a>
+        </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="images/projects/terrain.jpg" alt="Terrain Analysis">
+
+        <div class="project-content">
+          <h3>Terrain Analysis</h3>
+
+          <p>
+            DEM processing and terrain visualization using
+            GIS workflows and Python spatial libraries.
+          </p>
+
+          <a href="#">
+            View Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="images/projects/satellite.jpg" alt="Remote Sensing">
+
+        <div class="project-content">
+          <h3>Remote Sensing Classification</h3>
+
+          <p>
+            Satellite imagery analysis for geologic and
+            environmental interpretation.
+          </p>
+
+          <a href="#">
+            View Project →
+          </a>
+        </div>
+      </div>
+
     </div>
+
   </section>
 
-  <section>
-    <h2>Gallery</h2>
-    <p>Check out my bird photography: <a href="bird-gallery.html">View Bird Photo Log →</a></p>
+  <!-- Bird Photography -->
+  <section id="photography">
+
+    <h2 class="section-title">Bird Photography</h2>
+
+    <div class="gallery-grid">
+
+      <img src="images/birds/bird1.jpg" alt="Bird Photography">
+      <img src="images/birds/bird2.jpg" alt="Bird Photography">
+      <img src="images/birds/bird3.jpg" alt="Bird Photography">
+      <img src="images/birds/bird4.jpg" alt="Bird Photography">
+      <img src="images/birds/bird5.jpg" alt="Bird Photography">
+      <img src="images/birds/bird6.jpg" alt="Bird Photography">
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
+  <!-- About -->
+  <section id="about">
+
+    <h2 class="section-title">About</h2>
+
+    <div class="about-box">
+
+      <p>
+        I am interested in geoscience, mineral exploration,
+        geospatial analysis, and scientific computing.
+        My work combines geology, GIS, remote sensing,
+        and machine learning to analyze Earth systems
+        and spatial datasets.
+      </p>
+
+      <br>
+
+      <p>
+        I also enjoy wildlife and bird photography,
+        documenting species and landscapes during travel
+        and field exploration.
+      </p>
+
+    </div>
+
   </section>
 
+  <!-- Contact -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p>Email: your_email@example.com</p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/YOUR_USERNAME">
+        github.com/YOUR_USERNAME
+      </a>
+    </p>
+
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Your Name
+    © 2026 Leslie I — Geoscience Portfolio
   </footer>
 
 </body>
