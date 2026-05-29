@@ -157,10 +157,55 @@ section {
   margin-bottom: 18px;
 }
 
+/* =========================
+   Project Pages
+========================= */
+
 .project-container {
-    max-width: 260px;
+    max-width: 1000px;
     margin: 100px auto;
     padding: 0 20px;
+}
+
+.project-container h1 {
+    margin-bottom: 20px;
+}
+
+.project-container p {
+    margin: 25px 0;
+}
+
+.project-container ul {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+}
+
+.publication-button {
+    display: inline-block;
+    padding: 14px 28px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    background-color: #7cc7ff;
+    color: #0d1117;
+
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.publication-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .project-meta {
