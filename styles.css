@@ -1,57 +1,265 @@
-/* styles.css */
-body {
-  font-family: Arial, sans-serif;
+/* =========================
+   Global Styles
+========================= */
+
+* {
   margin: 0;
   padding: 0;
-  background: url('background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-header {
-  background-color: rgba(36, 41, 46, 0.85);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
 }
 
-header a {
-  color: #58a6ff;
+a {
+  color: #7cc7ff;
   text-decoration: none;
+  transition: 0.3s ease;
 }
+
+a:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(13, 17, 23, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 18px 10%;
+  z-index: 1000;
+  border-bottom: 1px solid #1f2937;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+  height: 100vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    url("images/geology-banner.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #c9d1d9;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #7cc7ff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #7cc7ff;
+  color: #0d1117;
+}
+
+/* =========================
+   Sections
+========================= */
 
 section {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 8px;
+  padding: 110px 10%;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.section-title {
+  font-family: 'Merriweather', serif;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #ffffff;
 }
 
-.photo {
-  flex: 1 1 250px;
-  background: white;
-  padding: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* =========================
+   Projects
+========================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.photo img {
+.project-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
   width: 100%;
-  border-radius: 4px;
+  height: 220px;
+  object-fit: cover;
 }
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.project-content p {
+  color: #b8c1cc;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   Bird Gallery
+========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* =========================
+   About Section
+========================= */
+
+.about-box {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 40px;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid #30363d;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* =========================
+   Contact Section
+========================= */
+
+#contact p {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Footer
+========================= */
 
 footer {
+  padding: 40px 10%;
+  border-top: 1px solid #1f2937;
   text-align: center;
-  padding: 1rem;
-  background-color: rgba(36, 41, 46, 0.85);
-  color: white;
-  margin-top: 2rem;
+  color: #8b949e;
 }
 
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+  nav ul {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 90px 7%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+}
